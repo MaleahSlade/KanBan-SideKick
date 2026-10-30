@@ -28,15 +28,15 @@ const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
   };
 
   return (
-    <div>
-      <select value={status} onChange={handleStatusChange}>
+    <div className="task-filter">
+      <select aria-label="Filter by status" value={status} onChange={handleStatusChange}>
         <option value="">All statuses</option>
         <option value="pending">Pending</option>
         <option value="in-progress">In progress</option>
         <option value="completed">Completed</option>
       </select>
 
-      <select value={priority} onChange={handlePriorityChange}>
+      <select aria-label="Filter by priority" value={priority} onChange={handlePriorityChange}>
         <option value="">All priorities</option>
         <option value="low">Low</option>
         <option value="medium">Medium</option>

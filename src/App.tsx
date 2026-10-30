@@ -17,12 +17,12 @@ function App() {
 
     // 3. Update one task's status (called from a TaskItem, via TaskList).
   const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
-    setTasks(tasks.map((t) => (t.id === taskId ? { ...t, status: newStatus } : t)));
+    setTasks((prev) => prev.map((t) => (t.id === taskId ? { ...t, status: newStatus } : t)));
   };
 
   // 4. Remove a task by its id.
   const handleDelete = (taskId: string) => {
-    setTasks(tasks.filter((t) => t.id !== taskId));
+    setTasks((prev) => prev.filter((t) => t.id !== taskId));
   };
 
   // 5. Apply the filters. A missing filter means "don't filter by this".
@@ -41,7 +41,7 @@ function App() {
 
 
    <div id= "task-generator">
-      <TaskGenerator onTaskAdd={(newTask) => setTasks([...tasks, newTask])} />
+      <TaskGenerator onTaskAdd={(newTask) => setTasks((prev) => [...prev, newTask])} />
       </div>
 
     <TaskFilter onFilterChange={setFilters} />
@@ -54,6 +54,6 @@ function App() {
    
     </>
   )
-}
+} 
 
 export default App

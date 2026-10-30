@@ -36,10 +36,11 @@ const TaskGenerator = ({ onTaskAdd }: TaskGeneratorProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Task title"
+        required
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

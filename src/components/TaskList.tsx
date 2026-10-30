@@ -10,7 +10,7 @@ import TaskItem from './TaskItem';
 const TaskList = ({ tasks, onStatusChange, onDelete }: TaskListProps) => {
   // Show a friendly message when there is nothing to display.
   if (tasks.length === 0) {
-    return <p>No tasks to show.</p>;
+    return <p className="empty-message">No tasks to show.</p>;
   }
 
   return (
